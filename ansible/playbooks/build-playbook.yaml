@@ -17,8 +17,8 @@
     - name: pushing image on dockerhub with tag latest
       shell: sudo docker image push "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
     - name: removing image locally
-      shell: sudo docker image rmi "{{ JOB_NAME }}":"{{ BUILD_ID }}"
+      shell: sudo docker rmi "{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: removing image tagged with build id
-      shell: sudo docker image rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
+      shell: sudo docker rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: removing image tagged with latest
-      shell: sudo docker image rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
+      shell: sudo docker rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
