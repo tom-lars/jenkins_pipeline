@@ -7,18 +7,18 @@
      docker_hub_account: ""
    tasks:
     - name: docker image build
-      shell: docker image build -t {{ JOB_NAME }}:{{ BUILD_ID }} /opt/
+      shell: docker image build -t "{{ JOB_NAME }}":"{{ BUILD_ID }}" /opt/
     - name: tagging image according to build number
-      shell: docker image tag {{ JOB_NAME }}:{{ BUILD_ID }} {{ docker_hub_account }}/{{ JOB_NAME }}:{{ BUILD_ID }}
+      shell: docker image tag "{{ JOB_NAME }}":"{{ BUILD_ID }}" "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: tagging image as latest
-      shell: docker image tag {{ JOB_NAME }}:{{ BUILD_ID }} {{ docker_hub_account }}/{{ JOB_NAME }}:latest
+      shell: docker image tag "{{ JOB_NAME }}":"{{ BUILD_ID }}" "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
     - name: pushing image on dockerhub with build id
-      shell: docker image push {{ docker_hub_account }}/{{ JOB_NAME }}:{{ BUILD_ID }}
+      shell: docker image push "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: pushing image on dockerhub with tag latest
-      shell: docker image push {{ docker_hub_account }}/{{ JOB_NAME }}:latest
+      shell: docker image push "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
     - name: removing image locally
-      shell: docker image rmi {{ JOB_NAME }}:{{ BUILD_ID }}
+      shell: docker image rmi "{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: removing image tagged with build id
-      shell: docker image rmi {{ docker_hub_account }}/{{ JOB_NAME }}:{{ BUILD_ID }}
+      shell: docker image rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: removing image tagged with latest
-      shell: docker image rmi {{ docker_hub_account }}/{{ JOB_NAME }}:latest
+      shell: docker image rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}":latest
