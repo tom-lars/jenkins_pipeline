@@ -8,6 +8,7 @@
    tasks:
     - name: stopping container
       shell: sudo docker stop {{ container_name }}
+      ignore_errors: yes
     - name: removing container
       shell: sudo docker rm {{ container_name }}
     - name: removing image
