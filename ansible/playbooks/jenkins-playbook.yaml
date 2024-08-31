@@ -1,6 +1,6 @@
 ---
  - name: jenkins-playbook
-   hosts: <build server IP>
+   hosts: build_server
    vars:
      dockerfile_path: ""
      destination_path: ""
