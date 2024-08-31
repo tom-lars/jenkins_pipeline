@@ -1,0 +1,16 @@
+---
+ - name: hosting-playbook
+   hosts: <hosting server IP>
+   vars:
+     JOB_NAME: ""
+     docker_hub_account: ""
+     container_name: ""
+   tasks:
+    - name: stopping container
+      shell: docker stop {{ container_name }}
+    - name: removing container
+      shell: docker rm {{ container_name }}
+    - name: removing image
+      shell: docker rmi {{ docker_hub_account }}/{{ JOB_NAME }}
+    - name: creating new container
+      shell: docker run -d --name {{ container_name }} -p 8080:80 {{ docker_hub_account }}/{{ JOB_NAME }}
