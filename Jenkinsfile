@@ -5,9 +5,9 @@ pipeline {
         // Define any environment variables you need
         ANSIBLE_CONFIG = "${WORKSPACE}/ansible/ansible.cfg"
         ANSIBLE_INVENTORY = "${WORKSPACE}/ansible/inventory.ini"
-        JENKINS_PLAYBOOK = "${WORKSPACE}/playbooks/jenkins-playbook.yaml"
-        BUILD_PLAYBOOK = "${WORKSPACE}/playbooks/build-playbook.yaml"
-        DEPLOY_PLAYBOOK = "${WORKSPACE}/playbooks/deploy-playbook.yaml"
+        JENKINS_PLAYBOOK = "${WORKSPACE}/ansible/playbooks/jenkins-playbook.yaml"
+        BUILD_PLAYBOOK = "${WORKSPACE}/ansible/playbooks/build-playbook.yaml"
+        DEPLOY_PLAYBOOK = "${WORKSPACE}/ansible/playbooks/deploy-playbook.yaml"
         
     }
 
