@@ -37,7 +37,7 @@ pipeline {
 		        docker_hub_account: "siddocker467"
                     ],
                     //colorized: true
-                
+                )
             }
         }
         
