@@ -21,7 +21,7 @@ pipeline {
                         dockerfile_path: "${env.WORKSPACE}/Dockerfile",
                         destination_path: "/opt/"
                     ],
-                    colorized: true
+                    //colorized: true
                 )
             }
         }
@@ -36,7 +36,7 @@ pipeline {
 			JOB_NAME: "${env.JOB_NAME}",
 		        docker_hub_account: "siddocker467"
                     ],
-                    colorized: true
+                    //colorized: true
                 
             }
         }
@@ -51,7 +51,7 @@ pipeline {
                         docker_hub_account: "siddocker467",
                         container_name: "web100"
                     ],
-                    colorized: true
+                    //colorized: true
                 
             }
         }
