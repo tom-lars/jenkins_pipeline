@@ -34,7 +34,7 @@ pipeline {
                     extraVars: [
                         BUILD_ID = "${env.BUILD_ID}",
 			JOB_NAME = "${env.JOB_NAME}",
-		        docker_hub_account = ""
+		        docker_hub_account = "siddocker467"
                     ],
                     colorized: true
                 
@@ -48,7 +48,7 @@ pipeline {
                     inventory: "${env.ANSIBLE_INVENTORY}",
                     extraVars: [
                         JOB_NAME: "${env.JOB_NAME}",
-                        docker_hub_account: "",
+                        docker_hub_account: "siddocker467",
                         container_name: "web100"
                     ],
                     colorized: true
