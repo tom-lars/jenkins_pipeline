@@ -7,13 +7,13 @@
      container_name: ""
    tasks:
     - name: stopping container
-      shell: sudo docker stop {{ container_name }}
+      shell: sudo docker stop "{{ container_name }}"
       ignore_errors: yes
     - name: removing container
-      shell: sudo docker rm {{ container_name }}
+      shell: sudo docker rm "{{ container_name }}"
       ignore_errors: yes
     - name: removing image
-      shell: sudo docker rmi {{ docker_hub_account }}/{{ JOB_NAME }}
+      shell: sudo docker rmi "{{ docker_hub_account }}"/"{{ JOB_NAME }}"
       ignore_errors: yes
     - name: creating new container
-      shell: sudo docker run -d --name {{ container_name }} -p 8080:80 {{ docker_hub_account }}/{{ JOB_NAME }}
+      shell: sudo docker run -d --name "{{ container_name }}" -p 8080:80 docker.io/"{{ docker_hub_account }}"/"{{ JOB_NAME }}"
