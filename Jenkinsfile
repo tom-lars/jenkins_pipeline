@@ -32,9 +32,9 @@ pipeline {
                     playbook: "${env.BUILD_PLAYBOOK}",
                     inventory: "${env.ANSIBLE_INVENTORY}",
                     extraVars: [
-                        BUILD_ID = "${env.BUILD_ID}",
-			JOB_NAME = "${env.JOB_NAME}",
-		        docker_hub_account = "siddocker467"
+                        BUILD_ID: "${env.BUILD_ID}",
+			JOB_NAME: "${env.JOB_NAME}",
+		        docker_hub_account: "siddocker467"
                     ],
                     colorized: true
                 
