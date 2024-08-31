@@ -7,7 +7,7 @@
      docker_hub_account: ""
    tasks:
     - name: docker image build
-      shell: docker image build -t "{{ JOB_NAME }}":"{{ BUILD_ID }}" /opt/
+      shell: docker image build -t "{{ JOB_NAME }}":"{{ BUILD_ID }}" /opt/Dockerfile
     - name: tagging image according to build number
       shell: docker image tag "{{ JOB_NAME }}":"{{ BUILD_ID }}" "{{ docker_hub_account }}"/"{{ JOB_NAME }}":"{{ BUILD_ID }}"
     - name: tagging image as latest
