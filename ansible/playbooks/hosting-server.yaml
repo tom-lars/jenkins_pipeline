@@ -1,6 +1,6 @@
 ---
  - name: hosting-playbook
-   hosts: <hosting server IP>
+   hosts: deploy_server
    vars:
      JOB_NAME: ""
      docker_hub_account: ""
