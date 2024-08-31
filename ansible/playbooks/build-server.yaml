@@ -1,6 +1,6 @@
 ---
  - name: build-playbook
-   hosts: <build server IP>
+   hosts: build_server
    vars:
      BUILD_ID: ""
      JOB_NAME: ""
