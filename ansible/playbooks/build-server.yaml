@@ -2,9 +2,9 @@
  - name: build-playbook
    hosts: <build server IP>
    vars:
-		 BUILD_ID: ""
-		 JOB_NAME: ""
-		 docker_hub_account: ""
+     BUILD_ID: ""
+     JOB_NAME: ""
+     docker_hub_account: ""
    tasks:
     - name: docker image build
       shell: docker image build -t {{ JOB_NAME }}:{{ BUILD_ID }} /opt/
