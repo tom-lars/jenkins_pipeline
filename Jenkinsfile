@@ -52,7 +52,7 @@ pipeline {
                         container_name: "web100"
                     ],
                     //colorized: true
-                
+                )
             }
         }
     }
