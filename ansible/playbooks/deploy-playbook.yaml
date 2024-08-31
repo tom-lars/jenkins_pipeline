@@ -7,10 +7,10 @@
      container_name: ""
    tasks:
     - name: stopping container
-      shell: docker stop {{ container_name }}
+      shell: sudo docker stop {{ container_name }}
     - name: removing container
-      shell: docker rm {{ container_name }}
+      shell: sudo docker rm {{ container_name }}
     - name: removing image
-      shell: docker rmi {{ docker_hub_account }}/{{ JOB_NAME }}
+      shell: sudo docker rmi {{ docker_hub_account }}/{{ JOB_NAME }}
     - name: creating new container
-      shell: docker run -d --name {{ container_name }} -p 8080:80 {{ docker_hub_account }}/{{ JOB_NAME }}
+      shell: sudo docker run -d --name {{ container_name }} -p 8080:80 {{ docker_hub_account }}/{{ JOB_NAME }}
